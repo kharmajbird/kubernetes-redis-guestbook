@@ -1,5 +1,9 @@
+#!/bin/bash
+
 ## Kubernetes Guestbook app
 ## + minikube + PHP + Redis
+##
+## localhost:8080
 
 
 
@@ -47,6 +51,7 @@ kubectl apply -f\
 
 
 # view the frontend service
+# this will appear to hang until CTRL-C
 
 kubectl port-forward svc/frontend 8080:80
 
