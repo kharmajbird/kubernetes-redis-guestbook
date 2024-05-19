@@ -58,14 +58,7 @@ kubectl port-forward svc/frontend 8080:80
 
 # cleanup
 
-kubectl delete \
-    deployment -l app=redis
-
-kubectl delete \
-    service -l app=redis
-
-kubectl delete \
-    deployment frontend
-
-kubectl delete \
-    service frontend
+kubectl delete deployment -l app=redis
+kubectl delete service -l app=redis
+kubectl delete deployment frontend
+kubectl delete service frontend
