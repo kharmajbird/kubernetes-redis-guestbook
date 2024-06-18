@@ -43,6 +43,14 @@ kubectl get pods \
     -l app=guestbook \
     -l tier=frontend
 
+echo "Wait until pods are built before continuing"
+echo
+echo "kubectl get pods \"
+echo "-l app=guestbook \"
+echo "-l tier=frontend"
+echo
+sh
+
 
 # Create the frontend service
 
@@ -56,6 +64,7 @@ kubectl apply -f\
 kubectl port-forward svc/frontend 8080:80
 
 
+exit
 # cleanup
 
 kubectl delete deployment -l app=redis
