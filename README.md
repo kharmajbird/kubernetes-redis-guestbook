@@ -9,26 +9,26 @@
 
 # Deploy Redis controller for a single replica pod
 
-kubectl apply -f\
-     https://k8s.io/examples/application/guestbook/redis-leader-deployment.yaml
+kubectl apply -f \
+     redis-leader-deployment.yaml
 
 
 # Create Redis leader service
 # Defines a policy to access pods via a proxy
 
-kubectl apply -f\
+kubectl apply -f \
     redis-leader-service.yaml
 
 
 # Set Redis followers/replicas
 
-kubectl apply -f\
+kubectl apply -f \
     redis-follower-deployment.yaml
 
 
 # Create Redis follower service
 
-kubectl apply -f\
+kubectl apply -f \
     redis-follower-service.yaml
 
 
@@ -36,7 +36,7 @@ kubectl apply -f\
 # The PHP frontend balances between the leader and follower(s) via a
 #   JSON interface serving as a jQuery-AJAX UI
 
-kubectl apply -f\
+kubectl apply -f \
     frontend-deployment.yaml
 
 kubectl get pods \
@@ -54,7 +54,7 @@ sh
 
 # Create the frontend service
 
-kubectl apply -f\
+kubectl apply -f \
     frontend-service.yaml
 
 
