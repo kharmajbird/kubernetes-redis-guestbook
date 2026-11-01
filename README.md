@@ -3,7 +3,7 @@
 ## Kubernetes Guestbook app
 ## + minikube + PHP + Redis
 ##
-## localhost:8080
+## localhost:8081
 
 
 
@@ -61,7 +61,7 @@ kubectl apply -f \
 # view the frontend service
 # this will appear to hang until CTRL-C
 
-kubectl port-forward svc/frontend 8080:80
+kubectl port-forward svc/frontend 8081:80
 
 
 exit
